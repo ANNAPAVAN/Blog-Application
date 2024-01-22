@@ -13,7 +13,9 @@ mongoose.connect('mongodb+srv://pavananna:Mongodb134@new.bes8xs6.mongodb.net/not
   useUnifiedTopology: true,
 })
 .then(() => {
-  app.listen(3333);
+    app.listen(3333, () => {
+        console.log('Server is running on http://localhost:3333/');
+    });
   console.log('Connected to MongoDB');
 })
 .catch((error) => {
@@ -98,3 +100,5 @@ app.delete('/blogs/:id',(req,res) => {
 app.use((req,res)=>{
     res.status(404).render("404",{title_name: '404'})
 })
+
+
